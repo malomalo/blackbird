@@ -1,0 +1,27 @@
+PATH
+  remote: .
+  specs:
+    blackbird (0.1)
+      bourbon
+      neat
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    bourbon (4.2.3)
+      sass (~> 3.4)
+      thor
+    neat (1.7.2)
+      bourbon (>= 4.0)
+      sass (>= 3.3)
+    rake (10.4.2)
+    sass (3.4.14)
+    thor (0.19.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  blackbird!
+  bundler
+  rake

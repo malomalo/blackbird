@@ -1,0 +1,39 @@
+<% {
+    'raleway/thin'       => 100,
+    'raleway/extralight' => 200,
+    'raleway/light'      => 300,
+    'raleway/regular'    => 400,
+    'raleway/medium'     => 500,
+    'raleway/semibold'   => 600,
+    'raleway/bold'       => 700,
+    'raleway/extrabold'  => 800,
+    'raleway/black'      => 900
+   }.each do |style, weight| %>
+
+@font-face {
+    font-family: 'Raleway';
+    src: asset-url('<%= style %>.eot');
+    src: local('<%= style.split('/').map(&:capitalize).join(' ') %>'), local('<%= style.split('/').map(&:capitalize).join('-') %>'),
+         url(asset-path('<%= style %>.eot') + '?#iefix') format('embedded-opentype'),
+         asset-url('<%= style %>.woff2') format('woff2'),
+         asset-url('<%= style %>.woff') format('woff'),
+         asset-url('<%= style %>.ttf') format('truetype'),
+         url(asset-path('<%= style %>.svg') + '#<%= style.gsub('/', '') %>') format('svg');
+    font-weight: <%= weight %>;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: asset-url('<%= style %>.eot');
+    src: local('<%= style.split('/').map(&:capitalize).join(' ') %>'), local('<%= style.split('/').map(&:capitalize).join('-') %>'),
+         url(asset-path('<%= style %>.eot') + '?#iefix') format('embedded-opentype'),
+         asset-url('<%= style %>.woff2') format('woff2'),
+         asset-url('<%= style %>.woff') format('woff'),
+         asset-url('<%= style %>.ttf') format('truetype'),
+         url(asset-path('<%= style %>.svg') + '#<%= style.gsub('/', '') %>_italic') format('svg');
+    font-weight: <%= weight %>;
+    font-style: italic;
+}
+
+<% end %>

@@ -1,0 +1,36 @@
+<% {
+    'roboto/thin'       => 100,
+    'roboto/light'      => 300,
+    'roboto/regular'    => 400,
+    'roboto/medium'     => 500,
+    'roboto/bold'       => 700,
+    'roboto/black'      => 900
+   }.each do |style, weight| %>
+
+@font-face {
+    font-family: 'Roboto';
+    src: asset-url('<%= style %>.eot');
+    src: local('<%= style.split('/').map(&:capitalize).join(' ') %>'), local('<%= style.split('/').map(&:capitalize).join('-') %>'),
+         url(asset-path('<%= style %>.eot') + '?#iefix') format('embedded-opentype'),
+         asset-url('<%= style %>.woff2') format('woff2'),
+         asset-url('<%= style %>.woff') format('woff'),
+         asset-url('<%= style %>.ttf') format('truetype'),
+         url(asset-path('<%= style %>.svg') + '#<%= style.gsub('/', '') %>') format('svg');
+    font-weight: <%= weight %>;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: asset-url('<%= style %>.eot');
+    src: local('<%= style.split('/').map(&:capitalize).join(' ') %>'), local('<%= style.split('/').map(&:capitalize).join('-') %>'),
+         url(asset-path('<%= style %>.eot') + '?#iefix') format('embedded-opentype'),
+         asset-url('<%= style %>.woff2') format('woff2'),
+         asset-url('<%= style %>.woff') format('woff'),
+         asset-url('<%= style %>.ttf') format('truetype'),
+         url(asset-path('<%= style %>.svg') + '#<%= style.gsub('/', '') %>_italic') format('svg');
+    font-weight: <%= weight %>;
+    font-style: italic;
+}
+
+<% end %>

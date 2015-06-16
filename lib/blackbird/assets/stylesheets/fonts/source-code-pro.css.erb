@@ -1,0 +1,22 @@
+<% {
+    'source-code-pro/extralight' => 100,
+    'source-code-pro/light'      => 300,
+    'source-code-pro/regular'    => 400,
+    'source-code-pro/medium'     => 500,
+    'source-code-pro/semibold'   => 600,
+    'source-code-pro/bold'       => 700,
+    'source-code-pro/black'      => 900
+   }.each do |style, weight| %>
+
+@font-face {
+    font-family: 'Source Code Pro';
+    src: asset-url('<%= style %>.eot');
+    src: local('<%= style.split(/[-\/]/).map(&:capitalize).join(' ') %>'), local('<%= style.split(/[-\/]/).map(&:capitalize).join('-') %>'),
+         url(asset-path('<%= style %>.eot') + '?#iefix') format('embedded-opentype'),
+         asset-url('<%= style %>.woff') format('woff'),
+         asset-url('<%= style %>.ttf') format('truetype'),
+         url(asset-path('<%= style %>.svg') + '#<%= style.gsub('/', '') %>') format('svg');
+    font-weight: <%= weight %>;
+    font-style: normal;
+}
+<% end %>
