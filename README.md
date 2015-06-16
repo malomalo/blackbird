@@ -1,4 +1,4 @@
-# Blackbird
+# <a href="https://github.com/malomalo/blackbird">![Blackbird](/logo.png)</a>
 
 Blackbird is a toolkit that includes basic CSS libaraires, Javascript libaraires,
 and Fonts for use in the [Rails Asset Pipline](http://guides.rubyonrails.org/asset_pipeline.html)
